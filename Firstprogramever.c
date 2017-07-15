@@ -14,7 +14,7 @@ void printVector(vector<int> b)
 	cout << "|";	
 
 
-	for(int = 0; i < b.size(); i++)
+	for(int i = 0; i < b.size(); i++)
 	{
 
 	cout << b[i] << "|"; 
