@@ -1,43 +1,100 @@
-/*
-*create a vector
-*/
-
-
-#include<iostream>
-#include<vector>
+#include <iostream>
+#include <string>
+#include <vector>
+#include <algorithm>
 
 using namespace std;
 
-void printVector(vector<int> b)
-{
-
-	cout << "|";	
-
-
-	for(int i = 0; i < b.size(); i++)
-	{
-
-	cout << b[i] << "|"; 
-
-	}
-
-}
-
+/**
+ * Auto-generated code below aims at helping you parse
+ * the standard input according to the problem statement.
+ * ---
+ * Hint: You can use the debug stream to print initialTX and initialTY, if Thor seems not follow your orders.
+ **/
 int main()
-
 {
-	vector<int> v(3);
+    int lightX; // the X position of the light of power
+    int lightY; // the Y position of the light of power
+    int initialTX; // Thor's starting X position
+    int initialTY; // Thor's starting Y position
+    cin >> lightX >> lightY >> initialTX >> initialTY; cin.ignore();
 
-	v[0] = 10;
-	v[1] = 22;
-	v[2] = 5;
+    // game loop
+    while (1) {
+        int remainingTurns; // The remaining amount of turns Thor can move. Do not remove this line.
+        cin >> remainingTurns; cin.ignore();
+        int x=0;
+        
+        while(x<remainingTurns){
 
-	v.push_back(7);
+       if (initialTX < lightX && initialTY == lightY) {
+            
+            
+            cout << "E" << endl;
+            
+        }
+        
+        if (initialTX == lightX && initialTY < lightY) {
+            
+         
+            cout << "S" << endl;   
+            
+        }
 
-	cout << v.front() << endl;
-	cout << v.back() << endl;
-	cout << v.at(2) << endl;
+        if (initialTX > lightX && initialTY == lightY) {
+            
+            cout << "W" << endl;   
+            
+            
+        }
+        
+        if (initialTX == lightX && initialTY > lightY) {
 
-	return 0;
 
-}
+            cout << "N" << endl;
+
+        }
+       
+       
+       if(initialTX < lightX && initialTY < lightY) {
+        
+            cout << "SE" << endl;
+            
+        }
+        
+        if(initialTX > lightX && initialTY > lightY) {
+            
+            cout << "NW" << endl;
+            
+        }
+        
+        if(initialTX > lightX && initialTY < lightY){
+            
+            
+            cout << "SW" << endl;   
+            
+        }
+        
+        if(initialTX < lightX && initialTY > lightY) {
+            
+            
+            cout << "NE" << endl;
+            
+            
+        }
+            
+         
+
+        }
+        x++;
+        
+        }
+    
+        // Write an action using cout. DON'T FORGET THE "<< endl"
+        // To debug: cerr << "Debug messages..." << endl;
+
+
+        // A single line providing the move to be made: N NE E SE S SW W or NW
+        cout << "SE" << endl;
+    }
+
